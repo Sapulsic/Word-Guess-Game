@@ -9,29 +9,16 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <script src="assets/javascript/game.js"></script>
 </head>
-<body>
+<body onload="start()">
     
 
-    <div class="gGame">
-        <div class="guess"></div>
-        <form class="gForm">
-            <input type="text" class="gLetter" maxlength="1" placeholder="Enter a letter . . . "/> <button type="submit" class="guessButton">Guess</button>
-        </form>
+    <h1>Test</h1>
+    <input id="gLetter" type="text">
+    <input type="button" value="letter" onclick="Letters()"/>
 
-        <p>Test
-        <br>
-        <!-- <a href="https://www.github.com/sapulsic">Check me out on Github.</a></p> -->
-            <div class="wrong">
-                <div class="wrongLetters"></div>
-            </div>
-            <div class="message">
-                <h1 class="title"></h1>
-                <p class="text"></p>
-                <button class="restart button">Play Again?</button>
-            </div>
-
-    </div>
-
+    <p id="wrong"></p> 
+    <p id="answer"></p>
+    <p id="status"></p>
 
 </body>
 </html>
