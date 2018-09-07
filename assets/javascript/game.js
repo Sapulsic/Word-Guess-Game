@@ -76,8 +76,8 @@ function newGame() {
     
     var counter = document.getElementById('counting');
     
-    counter.textContent = "No. of clicks: " + count;
-    losses.textContent = "Losses" + losses;
+    counter.textContent = "No. of Chances: " + count;
+    losses.textContent = "Losses: " + losses;
 
 }
 

@@ -17,17 +17,26 @@ html, body {
 body {
     display: flex;
     left: 10%;
+    font-family: 'Quicksand', sans-serif;
 }
 
+
+/* //////////// */
+/* HANGMAN GAME */
+/* //////////// */
+
+
 #hangMan {
-    background-color: rgba(255, 255, 255, 0.56);
+    background-color: rgba(212, 175, 55, 0.35);
     /* border: 3px solid black; */
     display: flex;
     position: relative;
     flex-direction: column;
     justify-content: center;
+    flex-wrap: wrap;
     text-align: center;
-    margin: 15% 35%;
+    margin: 12.5% 35%;
+    padding: 15px 0;
     flex: 1;
     left: -20%;
     border-radius: 25px;
@@ -38,4 +47,30 @@ body {
     width: 50%;
     text-align: center;
     margin: 0 auto;
+}
+
+#hangMan h1 {
+    margin-bottom: 20px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#hangMan #Halo {
+    height: 50px;
+    margin-top: 5px;
+}
+
+
+/* ///////////// */
+/* GUESSED TEXTS */
+/* ///////////// */
+
+
+#answer {
+    font-size: 1.5em;
+}
+
+#counting, #wins, #losses, #newGame {
+    font-weight: bold;
+    font-size: 1.25em;
+
 }

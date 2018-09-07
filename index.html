@@ -7,12 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Titillium+Web" rel="stylesheet">
+    <link rel="icon" type="image/PNG" href="http://rocketdock.com/images/screenshots/Halo-3-logo-transparent-copy-1.gif">
+
     <script src="assets/javascript/game.js"></script>
 </head>
 <body onload="start()">
     
     <div id="hangMan">
-        <h1>Test</h1>
+        <h1>Word Guess Game: <img id="Halo" src="assets/images/Halo2007.png" alt=""> Edition</h1>
             <input id="gLetter" type="text" maxlength="1">
             <br>
             <input id="gBtn" type="button" value=" Guess " pattern="{1}" onclick="submit()"/>
@@ -21,7 +24,7 @@
             
             <p id="counting">No. of clicks...</p> 
             <p id="answer"></p>
-            <p id="hint">Halo Franchise</p>
+            <!-- <p id="hint">Halo Franchise</p> -->
     
             <p id="wrongLetters"></p>
     
@@ -31,9 +34,9 @@
             
             <button id="newGame" type="submit" value=" New Game " onclick="newGame()">New Game</button>
 
-    </div>
+        </div>
 
-</div>
+    </div>
 
 </body>
 </html>
