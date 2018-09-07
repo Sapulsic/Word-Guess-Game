@@ -5,6 +5,7 @@ var wordList = ["halo", "elites", "grunts", "mythic", "jackals", "odst", "arbite
 var s;
 var guesses = [];
 var wrongGuesses = [];
+var myLetters = [];
 var count = 9;
 var wins = 0;
 var losses = 0;
@@ -26,11 +27,8 @@ function start() {
     s = guesses.join(" ");
     document.getElementById("answer").innerHTML = s;
     console.log(random);
+ }
 
-    
-    wrongGuesses = guesses.join(i);
-    document.getElementById('wrongLetters').innerHTML = wrongGuesses
-}
 
 
 function submit() {
@@ -43,7 +41,7 @@ function submit() {
         for (var i = 0; i < random.length; i++) {
             if (random[i] === letter) {
                 guesses[i] = letter;
-            }
+            } 
         }
 
 
@@ -55,6 +53,14 @@ function submit() {
 
         
         
+    }
+
+    function wrong() {
+        debugger;
+        if (wrongGuesses.push(letter)){
+            guesses.innerHTML = wrongGuesses.join(" ");
+
+        }
     }
     
 
@@ -76,8 +82,9 @@ function submit() {
 // When newGame() is called, restarts the values back to the original and begin a new game
 function newGame() {
     count = 9;
-    // losses 
     guesses = [];
+    wrongGuesses = [];
+    myLetters = [];
     random = wordList[Math.floor(Math.random() * wordList.length)];
     
     for ( var i = 0; i < random.length; i++) {
