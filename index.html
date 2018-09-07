@@ -11,27 +11,29 @@
 </head>
 <body onload="start()">
     
-
-    <h1>Test</h1>
-    <!-- <form class="guessForm"> -->
-        <input id="gLetter" type="text" maxlength="1">
-        <input id="gBtn" type="button" value=" Guess " pattern="{1}" onclick="submit()"/>
-    <!-- </form> -->
+    <div id="hangMan">
+        <h1>Test</h1>
+            <input id="gLetter" type="text" maxlength="1">
+            <br>
+            <input id="gBtn" type="button" value=" Guess " pattern="{1}" onclick="submit()"/>
+        
+        <div id="guessed">
+            
+            <p id="counting">No. of clicks...</p> 
+            <p id="answer"></p>
+            <p id="hint">Halo Franchise</p>
     
-    <div id="guessed">
-        
-        <p id="counting">No. of clicks...</p> 
-        <p id="answer"></p>
-        <p id="hint">Halo Franchise</p>
+            <p id="wrongLetters"></p>
+    
+    
+            <p id="wins"></p>
+            <p id="losses"></p>
+            
+            <button id="newGame" type="submit" value=" New Game " onclick="newGame()">New Game</button>
 
-        <p id="wrongLetters"></p>
-
-
-        <p id="wins"></p>
-        <p id="losses"></p>
-        
-        <button id="newGame" type="submit" value=" New Game " onclick="newGame()">New Game</button>
     </div>
+
+</div>
 
 </body>
 </html>

@@ -59,9 +59,6 @@ function submit() {
         newGame();
     }
 }
-    
-
-
 
 function newGame() {
     count = 9;
@@ -83,6 +80,5 @@ function newGame() {
     losses.textContent = "Losses" + losses;
 
 }
-
 
 
