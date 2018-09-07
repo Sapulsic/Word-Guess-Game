@@ -13,12 +13,24 @@
     
 
     <h1>Test</h1>
-    <input id="gLetter" type="text">
-    <input type="button" value="letter" onclick="Letters()"/>
+    <!-- <form class="guessForm"> -->
+        <input id="gLetter" value="Enter a Letter..." type="text" maxlength="1" onclick="clearMyField()">
+        <input type="button" value=" Guess " pattern="{1}" onclick="submit(), clearMyField()"/>
+    <!-- </form> -->
+    
+    <div id="guessed">
+        
+        <p id="counting">No. of clicks...</p> 
+        <p id="answer"></p>
 
-    <p id="wrong"></p> 
-    <p id="answer"></p>
-    <p id="status"></p>
+        <p id="wrongLetters"></p>
+
+        <p id="status"></p>
+        <p id="wins"></p>
+        <p id="losses"></p>
+        
+        <button id="newGame" type="submit" value=" New Game " onclick="newGame()">New Game</button>
+    </div>
 
 </body>
 </html>
