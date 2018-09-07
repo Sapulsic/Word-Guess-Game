@@ -1,5 +1,7 @@
+// Array
 var wordList = ["halo", "elites", "grunts", "mythic", "jackals", "odst", "arbiter", "prophets", "ark", "flood", "brute", "spartans", "unsc"];
 
+// Variables
 var s;
 var guesses = [];
 var wrongGuesses = [];
@@ -16,10 +18,18 @@ function start() {
         guesses[i] = "_";
     }
 
+    // for ( var i = 0; i < random.length; i++) {
+    //     guesses[i] = wrongGuesses;
+    // }
+
     // displays the word as "_"
     s = guesses.join(" ");
     document.getElementById("answer").innerHTML = s;
     console.log(random);
+
+    
+    wrongGuesses = guesses.join(i);
+    document.getElementById('wrongLetters').innerHTML = wrongGuesses
 }
 
 
@@ -36,6 +46,7 @@ function submit() {
             }
         }
 
+
         
         // Every guess it adds up
         count--;
@@ -47,12 +58,14 @@ function submit() {
     }
     
 
+    // Displays Wins
     if (random === guesses.join('')) {
         wins++;
         document.getElementById('wins').innerHTML = "Wins: " + wins;
         newGame();
     }
-    
+
+    // Displays Losses
     if (count === 0) {
         losses++;
         document.getElementById('losses').innerHTML = "Losses: " + losses;
@@ -60,6 +73,7 @@ function submit() {
     }
 }
 
+// When newGame() is called, restarts the values back to the original and begin a new game
 function newGame() {
     count = 9;
     // losses 
