@@ -3,11 +3,11 @@ var wordList = ["halo", "covenent", "elites", "sanghelios", "master chief", "gru
 var s;
 var guesses = [];
 var wrongGuesses = [];
-var random = wordList[Math.floor(Math.random() * wordList.length)];
-var count = 0;
+var count = 9;
 var wins = 0;
 var losses = 0;
 
+var random = wordList[Math.floor(Math.random() * wordList.length)];
 
 function start() {
 
@@ -18,7 +18,7 @@ function start() {
 
     // displays the word as "_"
     s = guesses.join(" ");
-    document.getElementById("answer").innerHTML = s;
+    // document.getElementById("answer").innerHTML = s;
     console.log(random);
 }
 
@@ -37,33 +37,32 @@ function submit() {
         }
 
         
-
-        count++;
-        document.getElementById("counting").innerHTML = "No. of clicks: " + count;
+        // Every guess it adds up
+        count--;
+        document.getElementById("counting").innerHTML = "No. of Chances: " + count;
         document.getElementById("answer").innerHTML = guesses.join(" ");
 
         
         
     }
-    if (count >  9) {
-        document.getElementById("status").innerHTML ="Bruhh, come on!";
+    
+
+    if (random === guesses.join(' ')) {
+        wins++;
+        document.getElementById('wins').innerHTML = "Wins: " + wins;
     }
     
-    if (count > 9) {
+    if (count === 0) {
         losses++;
-        losses = document.getElementById('losses').innerHTML = "Losses: " + losses;
+        document.getElementById('losses').innerHTML = "Losses: " + losses;
         newGame();
     }
 }
-
-function clearMyField() {
-    if(document.getElementById('gLetter').value == 'Enter a Letter...') {
-    document.getElementById('gLetter').value = '';
-    }
-}
+    
 
 function newGame() {
-    count = 0;
+    count = 9;
+    // losses 
     guesses = [];
     random = wordList[Math.floor(Math.random() * wordList.length)];
     
@@ -76,12 +75,9 @@ function newGame() {
     console.log(random);
     
     var counter = document.getElementById('counting');
-    var finished = document.getElementById('status');
     
     counter.textContent = "No. of clicks: " + count;
-    finished.textContent = " ";
     losses.textContent = "Losses" + losses;
-
 
 }
 
