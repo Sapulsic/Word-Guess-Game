@@ -1,48 +1,34 @@
 var wordList = ["halo", "covenent", "elites", "sanghelios", "master chief", "grunts", "mythic", "jackals", "odst", "arbiter", "prophets", "ark", "flood", "brute", "spartans", "unsc", "blue team"];
 
-var count = 0;
 var s;
 var guesses = [];
+var wrongGuesses = [];
 var random = wordList[Math.floor(Math.random() * wordList.length)];
+var count = 0;
 var wins = 0;
 var losses = 0;
 
 
 function start() {
 
+    // Loop through wordlist
     for ( var i = 0; i < random.length; i++) {
         guesses[i] = "_";
     }
 
+    // displays the word as "_"
     s = guesses.join(" ");
     document.getElementById("answer").innerHTML = s;
     console.log(random);
 }
 
-// window.onkeydown = function(event){
-//     if(event.keyCode == 13 || event.which == 13){
-//         sendNew();
-//         if(event.preventDefault) event.preventDefault(); // This should fix it
-//         return false; // Just a workaround for old browsers
-//     }
-//     return true;
-// }
-
-// function sendNew() {
-//     var msg=document.getElementById('gLetter').value.toString().trim();
-//     if(msg!=="") {
-//     //send message        
-//     document.getElementById('gLetter').value = "";
-//     }
-
-// }
-
 
 function submit() {
-    // debugger;
+    // grabs what you put into the text box
     var letter = document.getElementById("gLetter").value;
-    // var guess = event.key;
 
+    
+    // checks to see if the letter is inside the word
     if (letter.length > 0) {
         for (var i = 0; i < random.length; i++) {
             if (random[i] === letter) {
@@ -63,7 +49,7 @@ function submit() {
         document.getElementById("status").innerHTML ="Bruhh, come on!";
     }
     
-    if (count >= 9) {
+    if (count > 9) {
         losses++;
         losses = document.getElementById('losses').innerHTML = "Losses: " + losses;
         newGame();
@@ -75,12 +61,6 @@ function clearMyField() {
     document.getElementById('gLetter').value = '';
     }
 }
-
-// var input = document.getElementById('gLetter');
-// input.addEventListener('keyup', function(event) {
-//     event.key;
-// });
-
 
 function newGame() {
     count = 0;
