@@ -54,11 +54,11 @@ function submit() {
         }
 
     if (letter.length > 0) {
-        for(var i = 0; i < 9; i++) {
-            if (random[i] != letter) {
+        // for(var i = 0; i < 9; i++) {
+            if (i = 0, i > 9, i++, random[i] != letter) {
                 wrongGuesses[i] = letter;
             }
-        }
+        // }
     }
 
         
@@ -104,11 +104,20 @@ function newGame() {
     for ( var i = 0; i < random.length; i++) {
         guesses[i] = "_";
     }
+
+    for ( var i = 0; i < 9; i++) {
+        wrongGuesses[i] = "_";
+    }
+
     
     s = guesses.join(" ");
     document.getElementById("answer").innerHTML = s;
-    console.log(random);
     
+    t = wrongGuesses.join(" ");
+    document.getElementById("wrongLetters").innerHTML = t;
+
+    console.log(random);
+
     var counter = document.getElementById('counting');
     
     counter.textContent = "No. of Chances: " + count;
