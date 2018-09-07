@@ -20,8 +20,8 @@ function start() {
         guesses[i] = "_";
     }
 
-    for ( var i = 0; i < myLetters.length; i++) {
-        wrongGuesses[i] = myLetters;
+    for ( var i = 0; i < wrongGuesses.length; i++) {
+        wrongGuesses[i] = "_";
     }
 
     // for ( var i = 0; i < random.length; i++) {
@@ -55,7 +55,7 @@ function submit() {
 
     if (letter.length > 0) {
         // for(var i = 0; i < 9; i++) {
-            if ( i++, random[i] != letter) {
+            if (random[i] != letter) {
                 wrongGuesses[i] = letter;
             }
         // }
