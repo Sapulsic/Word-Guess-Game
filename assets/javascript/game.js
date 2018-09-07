@@ -1,4 +1,4 @@
-var wordList = ["halo", "covenent", "elites", "sanghelios", "master chief", "grunts", "mythic", "jackals", "odst", "arbiter", "prophets", "ark", "flood", "brute", "spartans", "unsc", "blue team"];
+var wordList = ["halo", "elites", "grunts", "mythic", "jackals", "odst", "arbiter", "prophets", "ark", "flood", "brute", "spartans", "unsc"];
 
 var s;
 var guesses = [];
@@ -18,7 +18,7 @@ function start() {
 
     // displays the word as "_"
     s = guesses.join(" ");
-    // document.getElementById("answer").innerHTML = s;
+    document.getElementById("answer").innerHTML = s;
     console.log(random);
 }
 
@@ -47,9 +47,10 @@ function submit() {
     }
     
 
-    if (random === guesses.join(' ')) {
+    if (random === guesses.join('')) {
         wins++;
         document.getElementById('wins').innerHTML = "Wins: " + wins;
+        newGame();
     }
     
     if (count === 0) {
@@ -59,6 +60,8 @@ function submit() {
     }
 }
     
+
+
 
 function newGame() {
     count = 9;
@@ -80,5 +83,6 @@ function newGame() {
     losses.textContent = "Losses" + losses;
 
 }
+
 
 
