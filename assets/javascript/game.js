@@ -3,6 +3,7 @@ var wordList = ["halo", "elites", "grunts", "mythic", "jackals", "odst", "arbite
 
 // Variables
 var s;
+var t;
 var guesses = [];
 var wrongGuesses = [];
 var myLetters = [];
@@ -19,6 +20,10 @@ function start() {
         guesses[i] = "_";
     }
 
+    for ( var i = 0; i < 9; i++) {
+        wrongGuesses[i] = "_";
+    }
+
     // for ( var i = 0; i < random.length; i++) {
     //     guesses[i] = wrongGuesses;
     // }
@@ -27,7 +32,11 @@ function start() {
     s = guesses.join(" ");
     document.getElementById("answer").innerHTML = s;
     console.log(random);
- }
+
+    
+    t = wrongGuesses.join(" ");
+    document.getElementById("wrongLetters").innerHTML = t;
+}
 
 
 
@@ -44,24 +53,29 @@ function submit() {
             } 
         }
 
+    if (letter.length > 0) {
+        for(var i = 0; i < 9; i++) {
+            if (random[i] != letter) {
+                wrongGuesses[i] = letter;
+            }
+        }
+    }
 
         
         // Every guess it adds up
         count--;
         document.getElementById("counting").innerHTML = "No. of Chances: " + count;
         document.getElementById("answer").innerHTML = guesses.join(" ");
-
+        
+        document.getElementById('wrongLetters').innerHTML = wrongGuesses.join(" ");
         
         
     }
 
-    function wrong() {
-        debugger;
-        if (wrongGuesses.push(letter)){
-            guesses.innerHTML = wrongGuesses.join(" ");
+    // if (guesses.push(" ")){
 
-        }
-    }
+
+    // }
     
 
     // Displays Wins
