@@ -1,6 +1,9 @@
 // Array
 var wordList = ["halo", "elites", "grunts", "mythic", "jackals", "odst", "arbiter", "prophets", "ark", "flood", "brute", "spartans", "unsc"];
 
+// DOM
+
+
 // Variables
 var s;
 var t;
@@ -33,7 +36,7 @@ function start() {
     document.getElementById("answer").innerHTML = s;
     console.log(random);
 
-    
+    // displays the letters guessed
     t = wrongGuesses.join(" ");
     document.getElementById("wrongLetters").innerHTML = t;
 }
@@ -50,7 +53,7 @@ function submit() {
         for (var i = 0; i < random.length; i++) {
             if (random[i] === letter) {
                 guesses[i] = letter;
-            } 
+            }
         }
 
     if (letter.length > 0) {
@@ -67,7 +70,7 @@ function submit() {
         document.getElementById("counting").innerHTML = "No. of Chances: " + count;
         document.getElementById("answer").innerHTML = guesses.join(" ");
         
-        document.getElementById('wrongLetters').innerHTML = wrongGuesses.push(" ");
+        document.getElementById('wrongLetters').innerHTML = wrongGuesses.join(" ");
         
         
     }
@@ -105,10 +108,11 @@ function newGame() {
         guesses[i] = "_";
     }
 
-    for ( var i = 0; i < 9; i++) {
+    for ( var i = 0; i < 0; i++) {
         wrongGuesses[i] = "_";
     }
 
+    
     
     s = guesses.join(" ");
     document.getElementById("answer").innerHTML = s;
@@ -125,4 +129,9 @@ function newGame() {
 
 }
 
+document.onkeyup =  function(event) {
+    if (event.keycode >= 68 && event.keycode <= 90) {
+        start(event.key);
+    }
+}
 
