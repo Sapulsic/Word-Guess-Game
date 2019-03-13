@@ -1,3 +1,14 @@
 # Word-Guess-Game
 
-Definitely much harder than the previous and excitied and terrified for the next assignments. Couldn't get all the necessary points I was trying to go for, but got a good chunk. Or so I think.
+#### Welcome to SafeSpace. 
+
+Guess terms related to the Halo Games.
+
+#### Check it out [here](https://sapulsic.github.io/Word-Guess-Game/).
+
+![screenshot](assets/images/SafeSpace1.png)
+
+## Technologies Used
+
+#### HTML & CSS
+#### Javascript
