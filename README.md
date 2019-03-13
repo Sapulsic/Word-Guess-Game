@@ -1,7 +1,5 @@
 # Word-Guess-Game
 
-#### Welcome to SafeSpace. 
-
 Guess terms related to the Halo Games.
 
 #### Check it out [here](https://sapulsic.github.io/Word-Guess-Game/).
